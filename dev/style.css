@@ -10,57 +10,17 @@
  *  Licensed to the public under the Apache License 2.0
  */
  :root {
-    --commonRadius0: 8px;
-    --commonRadius1: 5px
- }
-
- [data-theme='light'] {
-    --bg: #f1f4f5;
-    --mainbg: #fff;
-    --bgwhite: #fff;
-    --activeColor: #5ea69b;
-    --activeBottom: #5ea69b 2px solid;
-    --textColor: rgb(132,119,116);
-    --borderColor: rgba(0,0,0,.15);
-    --navbgColor: rgba(255, 255, 255, .7);
-    --navBorder: 1px solid #f2f2f2;
-    --sectionbgColor: #fff;
-    --sectionbgColor2: #fff;
-    --sectionShaddow: 3px 3px 3px rgba(0,0,0,.05);
-    --sectionBorder: none;
-    --sectiontabBorder: none;
-    --tabmenuBorderLR: none;
-    --tabmenubgColor: none;
-    --tabmenuBottom: #e4eaec 1px solid;
-    --tabmenuRadius: 6px 6px 0 0;
-    --sectionnodeBorder: #f7f7f7 1px solid;
-    --cbilineColor: #f7f7f7 1px solid;
-    --tabbgColor: #fff;
-    --inputbgColor: #f8f8f8;
-    --inputtextColor: #76838f;
-    --inputBorder: 1px solid #e4eaec;
-    --mainleftbgColor: rgb(255,255,255);
-    --bttextColor: #fff;
-    --badgebgColor: #f7f7f7;
-    --badgeBorder: #e4eaec 1px solid;
-    --progressbarColor: #c8c8c8;
-    --progressbar: #5ea69b;
-    --progressbartxtColor: #fff;
-    /* --logo: url('/luci-static/design/images/logo.png');
-    --mlogo: url('/luci-static/design/images/mlogo.png'); */
-    --logo_color: #222b36;
-    --alertColor: #000000;
-    --alertBackground: rgb(230 230 230);
-    --scrollbarColor:#c5c5c5;
-    --ifaceboxBorderColor: #b8b8b8bd;
-    --ifaceboxFontColor: #404040;
-    --liSelectedColor: #c5c5c5;
-    --vssrStatusColor: #525f7f;
-    --vssrBoxShadow: 0 0 2rem 0 rgb(136 152 170 / 30%);
-}
-
-[data-theme='dark'] {
     --bg: #000;
+    
+    --mainBg: #21333e;
+    --contentBg: url(../images/wall.gif) repeat;
+    --mainleftItemHover: #77A5C6;
+    --mainleftItemBg: #3A4042;
+    --mainleftTitleBG: #4E5659;
+    --mainleftItemActive: linear-gradient(to bottom, #8AA6BE  0%, #668CAD 44%, #4A779D 45%, #3A6894 46%, #376C9B 100%);
+    --mainrightGroupBg: #4E5659;
+    --mainrightGroupBg2: #2F3A3E;
+    --mainrightBG:#7B888D;
     --bgwhite: #000;
     --textColor: #fefefe;
     --activeColor: #5ea69b;
@@ -80,9 +40,9 @@
     --tabmenubgColor: none;
     --tabmenuBottom: #2d2d2d 1px solid;
     --tabmenuRadius: 6px 6px 0 0;
-    --inputbgColor: #2f2f2f;
+    --inputbgColor: #576D73;
     --inputtextColor: #fefefe;
-    --inputBorder: 1px solid #4d4d4d;
+    --inputBorder: 2px solid #939FA2;
     --mainleftbgColor: #000;
     --bttextColor: #fefefe;
     --badgebgColor: #fefefe;
@@ -154,7 +114,7 @@ html, body {
     font-family: -apple-system, 'Microsoft Yahei' !important;
     font-size: 0.92rem;
     line-height: 150%;
-    background-color: var(--bg);
+    background-color: var(--mainBg);
     color:var(--textColor);
 }
 
@@ -200,15 +160,14 @@ input {
     font-size: 0.92rem;
     font-family: -apple-system, 'Microsoft Yahei', sans-serif, Helvetica, Arial, sans-serif;
     border: var(--inputBorder);
-    background-color: var(--inputbgColor);
+    background: var(--inputbgColor);
     transition: color 100ms ease, border-color 100ms ease, opacity 100ms ease;
     -webkit-transition: color 100ms ease, border-color 100ms ease, opacity 100ms ease;
     outline-style: none;
     vertical-align: middle;
-    border-radius: var(--commonRadius0);
     margin: 3px 3px 3px 0;
-    height: 2.8rem;
-    line-height: 2.8rem;
+    height: 2 rem;
+    line-height: 2rem;
     max-width: 550px; 
 }
 
@@ -290,11 +249,16 @@ hr{
 header, .main {
     width: 100%;
     position: absolute;
+    background: url(../images/midup_bg.png) no-repeat top ,url(../images/middown_bg.png) repeat-y;
+    background-size: 100% auto;
+    overflow-y: auto;
 }
 
 header {
-    background-color: var(--bgwhite);
-    box-shadow: 18rem 2px 4px rgba(0, 0, 0, 0.08);
+    /*background-color: var(--bgwhite);*/
+    background: url(../images/title_bg.png) no-repeat;
+    background-size:100% 100%;
+    /*box-shadow: 18rem 2px 4px rgba(0, 0, 0, 0.08);*/
     transition: box-shadow 0.1s;
     height: 55px;
     float: left;
@@ -403,7 +367,7 @@ svg {
 .node-services-vssr .status-bar {
     bottom:calc(var(--vssrBottom) + constant(safe-area-inset-bottom));
     bottom:calc(var(--vssrBottom) + env(safe-area-inset-bottom));
-    background-color: var(--navbgColor);
+    background-color: var(--mainleftItemBg);
     box-shadow: var(--vssrBoxShadow) !important;
     color: var(--vssrStatusColor) !important;
 }
@@ -1024,9 +988,7 @@ img[src*="/luci-static/resources/icons/signal-none.png"]
     font-size: 1.5rem;
 }
 
-.node-main-login header {
-    display: none;
-}
+
 .node-main-login > .main > .main-left {
     display: none;
 }
@@ -1127,9 +1089,11 @@ img[src*="/luci-static/resources/icons/signal-none.png"]
   text-align: center;
   height:calc(50px + constant(safe-area-inset-bottom));
   height:calc(50px + env(safe-area-inset-bottom));
-  background-color: var(--navbgColor);
+  background: url(../images/bottom_bg.png);
+  background-size: 100% 100%;
     -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+  opacity: 0.9;
 }
 
 .navbar a {
@@ -1170,7 +1134,7 @@ img[src*="/luci-static/resources/icons/signal-none.png"]
 .main-left {
     float: left;
     width: 18rem;
-    background-color: var(--mainleftbgColor);
+    /* background-color: var(--mainleftItemBg); */
     overflow-x: auto;
     height: calc(100% - 3.5rem);
     position: fixed;
@@ -1188,6 +1152,12 @@ img[src*="/luci-static/resources/icons/signal-none.png"]
 }
 
 .main-right > #maincontent {
+    background: var(--mainrightBG);
+    border-radius: 6px;
+    margin-top:0.25rem;
+    padding-top: 0.25rem;
+    margin-right: 2%;
+    margin-left: 2%;
 }
 
 .pull-right {
@@ -1319,12 +1289,26 @@ p#shadowsocksr_status {
     width: 90%;
     margin: auto;
     margin-bottom: 90px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-left: 6%;
+    /* background-color: var(--mainleftItemBg); */
 }
 
+/* .main > .main-left > .nav > li {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.main > .main-left > .nav > li > .nnode_title{
+    margin: auto;
+} */
+
 .main > .main-left > .nav > li a {
-    color: var(--activeColor);
+    color: var(--textColor);
     display: block;
-    border-radius: 6px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
     cursor: pointer;
     font-weight: bold;
     font-size: 1.1rem;
@@ -1344,9 +1328,79 @@ p#shadowsocksr_status {
     padding-top:6px;
 }
 
+
+.main > .main-left > .nav > .slide > .slide-menu > li {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    justify-items: start;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    align-items: center;
+
+}
+
+.main > .main-left > .nav > .slide > .slide-menu > li > .nnode_icon {
+    height: 43px;
+    width: 43px;
+    background: url(../images/_APP_Installation.png) center;
+    background-size: 100% 100%;
+    margin: auto;
+}
+
+.main > .main-left > .nav > .slide > .slide-menu > li > .Turbo_ACC_Center {
+    background: url(../images/_AdaptiveQoS_Bandwidth_Monitor.png) center;
+}
+
+.main > .main-left > .nav > .slide > .slide-menu > li > .Administration  {
+    background: url(../images/_AiProtection_HomeSecurity.png) center;
+}
+ 
+.main > .main-left > .nav > .slide > .slide-menu > li > .Realtime_Graphs  {
+    background: url(../images/_TrafficAnalyzer_Statistic.png) center;
+}
+
+.main > .main-left > .nav > .slide > .slide-menu > li > .Wireless {
+    background: url(../images/menu_img1.png) center;
+}
+
+.main > .main-left > .nav > .slide > .slide-menu > li > .Overview {
+    background: url(../images/menu_img3.png) center;
+}
+
+.main > .main-left > .nav > .slide > .slide-menu > li > .Interfaces {
+    background: url(../images/menu_img4.png) center;
+}
+
+.main > .main-left > .nav > .slide > .slide-menu > li > .System_Log,
+.main > .main-left > .nav > .slide > .slide-menu > li > .Kernel_Log
+  {
+    background: url(../images/menu_img9.png) center;
+}
+
+.main > .main-left > .nav > .slide > .slide-menu > li > .Backup__Flash_Firmware  {
+    background: url(../images/menu_img10.png) center;
+}
+
+.main > .main-left > .nav > .slide > .slide-menu > li > .Firewall {
+    background: url(../images/menu_img11.png) center;
+}
+
+
+ 
+
+.main > .main-left > .nav > .slide > .slide-menu > li > .nnode_title {
+    margin-left: 2%;
+}
+
+
+
 .main > .main-left > .nav > .slide {
     padding: 0;
-    padding-top:8px;
+    margin: 0.8rem;
+    border: 1px solid #6B7071;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    text-shadow: 1px 1px 0px black;
 }
 
 .main > .main-left > .nav > .slide > a:before {
@@ -1467,23 +1521,32 @@ p#shadowsocksr_status {
     padding: 0.675rem 0 0.675rem 2.5rem;
     text-decoration: none;
     cursor: pointer;;
+    background-color: var(--mainleftTitleBG);
+    height: 60%;
+    color:white;
 }
 
 .main > .main-left > .nav > .slide > .menu2 {
-    display: block;
+    /* display: block;
     padding: 0.675rem 0 0.675rem 2.5rem;
     text-decoration: none;
-    cursor: pointer;;
+    cursor: pointer;; */
+
+
 }
+
 .main > .main-left > .nav > li:hover,
 .main > .main-left > .nav > .slide > .menu:hover {
-    background: var(--activeColor);
+    background: var(--mainleftItemHover);
     color:white;
 }
-.main > .main-left > .nav > .slide > .menu2:hover {
-    background: var(--activeColor);
-    color:white;
+.main > .main-left > .nav > .no_hover:hover {
+    background: none;
 }
+/* .main > .main-left > .nav > .slide > .menu2:hover {
+    background: var(--mainleftItemHover);
+    color:white;
+} */
 
 .main > .main-left > .nav > .slide:hover {
     background: none;
@@ -1492,12 +1555,13 @@ p#shadowsocksr_status {
     overflow:hidden;
     }
 .main > .main-left > .nav > .slide > .slide-menu > li {
-    margin-top: 8px;
-    border-radius: 6px;
+    border: 1px solid #6B7071;
+    background: var(--mainleftItemBg);
 }
 
 .main > .main-left > .nav > .slide > .slide-menu > .active {
-    background-color: var(--activeColor);
+    background: var(--mainleftItemActive);
+    color:white;
 }
 
 .main > .main-left > .nav > .slide > .slide-menu > li > a {
@@ -1513,7 +1577,7 @@ p#shadowsocksr_status {
     padding: 0.675rem 0 0.675rem 3.2rem;
 }
 .main .main-left .nav li.slide .slide-menu .active a {
-    color: #000;
+    color: #fff;
   }
 
 .main > .main-left > .nav > .slide > .slide-menu > li > a:hover {
@@ -1525,14 +1589,13 @@ p#shadowsocksr_status {
 }
 
 .main > .main-left > .nav > .slide > .slide-menu > li:hover {
-    background: var(--activeColor);
+    background: var(--mainleftItemHover);
     color:white !important;
     transition: all 0.1s;
 }
 
 .main > .main-left > .nav > .slide > .slide-menu > .active:hover {
-    background-color: var(--activeColor);
-    cursor: pointer;
+    background: linear-gradient(to bottom, #8AA6BE  0%, #668CAD 44%, #4A779D 45%, #3A6894 46%, #376C9B 100%);
 }
 
 .cbi-tab-descr {
@@ -1548,21 +1611,21 @@ li {
 }
 
 h1 {
-    color: var(--activeColor);
+    color: var(--textColor);
     font-size: 20px;
     padding-bottom: 10px;
     border-bottom: 1px solid #eee;
 }
 
 h2 {
-    color: var(--activeColor);
+    color: var(--textColor);
     padding: 0 12px 6px 12px;
     text-transform: capitalize;
 }
 
 h3 {
     font-size: 1.2rem;
-    color: var(--activeColor);
+    color: var(--textColor);
     font-weight:bold;
     padding: 0 12px 10px 12px;
 }
@@ -1587,7 +1650,7 @@ fieldset {
     min-width: inherit;
     overflow-x: auto;
     overflow-y: hidden;
-    background-color: var(--sectionbgColor);
+    background-color: var(--mainrightGroupBg);
     /* box-shadow: var(--sectionShaddow); */
     -webkit-overflow-scrolling: touch;
 }
@@ -1676,7 +1739,7 @@ table > tbody > tr:last-child {
     background-color: #cc0066;
 }
 fieldset > table > tbody > tr:nth-of-type(odd) {
-    background-color: var(--sectionbgColor2);
+    background-color: var(--mainrightGroupBg2);
 }
 
 /* fixed DHCPv6 lease table host names incorrectly displayed */
@@ -1912,7 +1975,6 @@ td#__status-ifc-signal {
     -webkit-appearance: none;
     text-transform: uppercase;
     color: #fff;
-    background-color: #337ab7;
     transition: all 0.1s ease-in-out;
     display: inline-block;
     border: none;
@@ -1941,7 +2003,6 @@ td#__status-ifc-signal {
     color: #fff;
     outline: 0;
     text-decoration: none;
-    background-color: rgb(106,101,214);
 }
 
 .cbi-button:hover,
@@ -1967,14 +2028,12 @@ form.inline + form.inline,
 .cbi-button-reset,
 .cbi-input-remove {
     color: #fff !important;
-    background-color: #617486 !important;
 }
 
 .cbi-button-reset:hover,
 .cbi-input-remove:hover,
 .cbi-button-remove:hover{
     color: #fff !important;
-    background-color: rgb(83,100,115) !important;
 }
 
 .cbi-button-link,
@@ -1986,8 +2045,6 @@ form.inline + form.inline,
 .cbi-input-reload,
 .cbi-button-reload {
     color: var(--bttextColor);
-    background-color: #337ab7 !important;
-    border-color: #337ab7 !important;
 }
 
 .cbi-button-link:hover,
@@ -1999,8 +2056,6 @@ form.inline + form.inline,
 .cbi-input-reload:hover,
 .cbi-button-reload:hover{
     color: #fff !important;
-    background-color: #6A82AE!important;
-    border-color: #6A82AE !important;
 }
 
 
@@ -2008,7 +2063,7 @@ form.inline + form.inline,
 .cbi-button-apply,
 .cbi-button-edit {
     color: #fff !important;
-    background-color: var(--activeColor);
+    background-color: var(--mainleftItemHover);
 }
 
 .cbi-input-reset,
@@ -2113,14 +2168,14 @@ form.inline + form.inline,
     clear:both;
 }
 .cbi-tabcontainer > .cbi-value:nth-of-type(2n) {
-    background-color: var(--sectionbgColor2);
+    background-color: var(--mainrightGroupBg2);
 }
 
 .cbi-section-node > .cbi-value:nth-of-type(2n) {
-    background-color: var(--sectionbgColor2);
+    background-color: var(--mainrightGroupBg2);
 }
 div > .cbi-value:nth-of-type(2n) {
-    background-color: var(--sectionbgColor2);
+    background-color: var(--mainrightGroupBg2);
 }
 
 .cbi-value-field,
@@ -2179,7 +2234,7 @@ div > .cbi-value:nth-of-type(2n) {
 }
 
 .cbi-rowstyle-2 {
-    background-color: var(--sectionbgColor2);
+    background-color: var(--mainrightGroupBg2);
 }
 
 .cbi-rowstyle-2 .cbi-button-up,
@@ -2280,7 +2335,7 @@ div > .cbi-value:nth-of-type(2n) {
     padding: 5px;
     margin-top:10px;
     border-radius: 10px;
-    background-color: var(--sectionbgColor);
+    background-color: var(--mainrightGroupBg2);
     box-shadow: 3px 3px 3px rgb(0 0 0 / 5%);
 }
 
@@ -2326,7 +2381,7 @@ fieldset.cbi-section{
     padding: 10px;
     margin-bottom: 20px;
     border-radius: 0;
-    background-color: var(--sectionbgColor);
+    background-color: var(--mainrightGroupBg);
     border: none;
 }
 
@@ -2709,7 +2764,7 @@ header > .container > .pull-right > * {
     border-bottom: var(--sectionBorder);
     border-left: var(--sectionBorder);
     border-right: var(--sectionBorder);
-    background-color: var(--sectionbgColor);
+    background-color: var(--mainrightGroupBg);
     border-radius: 10px;
 }
 
@@ -3448,11 +3503,21 @@ form[action="/cgi-bin/luci/admin/network/wireless_join"] input[class="cbi-button
     width: 100% !important;
 }
 /* fix luci-app-fileassistant botton style */
+
+.cbi-button-add,.cbi-button,.cbi-button-link,.cbi-button-reset,.cbi-button-remove,.cbi-button-save,.cbi-button-cancel,.cbi-button-close
+{
+    background: transparent url(../images/contentbt_normal.png) no-repeat scroll center top;
+}
+.cbi-button-add:hover,.cbi-button:hover,.cbi-button-link:hover,.cbi-button-reset:hover,.cbi-button-remove:hover,.cbi-button-save:hover,.cbi-button-cancel:hover,.cbi-button-close:hover
+{
+    background: transparent url(../images/contentbt_over.png) no-repeat scroll center top;
+}
+
 .fb-container .cbi-button {
     border-radius: var(--commonRadius0);
     margin: 3px 3px 3px 0;
     height: unset !important;
-}
+    
 /* update node-system-commands style */
 .node-system-commands h3 {
     text-transform: unset;

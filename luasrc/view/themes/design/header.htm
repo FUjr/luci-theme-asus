@@ -268,7 +268,7 @@
 				 local href  = controller .. "" .. prefix .. r ..
 				 (nnode.query and http.build_querystring(nnode.query) or "")
 				 %>
-				 <li><a data-title="<%=pcdata(striptags(nnode.title))%>" href="<%=pcdata(href)%>"><%=pcdata(striptags(translate(nnode.title)))%></a></li>
+				 <li><div class="<%=string.gsub(string.gsub(pcdata(striptags(nnode.title))," ","_"),"/","")%> nnode_icon"></div class="nnode_titile"><div><a data-title="<%=pcdata(striptags(nnode.title))%>" href="<%=pcdata(href)%>"><%=pcdata(striptags(translate(nnode.title)))%></a></div></li>
 				 <%-
 				 end
 				 %>
@@ -293,8 +293,8 @@
 				 <%- submenu("" .. category .. "/" .. r .. "/", nnode) %>
 			 </li>
 			 <%          else %>
-			 <li class="slide">
-				 <a class="menu2" data-title="<%=pcdata(striptags(nnode.title))%>" href="<%=pcdata(href)%>"><%=pcdata(striptags(translate(nnode.title)))%></a>
+			 <li class="no_hover">
+				<a type="submit" class="cbi-button" value="<%=pcdata(striptags(nnode.title))%>" href="<%=pcdata(href)%>"><%=pcdata(striptags(nnode.title))%> </a>
 			 </li>
 			 <%
 			 end
@@ -302,6 +302,7 @@
 			 end
 			 %>
 		 </ul>
+		 
 	 </div>
 	 <div class="main-right">
 		 <div class="darkMask"></div>

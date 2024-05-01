@@ -76,7 +76,7 @@
                 if (urlReg.test(href)) {
                     ulNode.click();
                     ulNode.next(".slide-menu").stop(true, true);
-                    lastNode = that.parent();
+                    lastNode = that.parent().parent();
                     lastNode.addClass("active");
                     ret = true;
                     return true;

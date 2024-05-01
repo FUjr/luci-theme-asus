@@ -292,7 +292,16 @@
 				 <a class="menu" data-title="<%=pcdata(striptags(nnode.title))%>" href="#"><%=pcdata(striptags(translate(nnode.title)))%></a>
 				 <%- submenu("" .. category .. "/" .. r .. "/", nnode) %>
 			 </li>
-			 <%          else %>
+			 <%          elseif pcdata(striptags(nnode.title)) == "初始化设置" then%>
+			 <li class="wizard_li">
+				<div class="nnode_icon wizard">
+					
+				</div>
+				<div>
+					<a value="<%=pcdata(striptags(nnode.title))%>" href="<%=pcdata(href)%>"><%=pcdata(striptags(nnode.title))%> </a>
+				</div>
+			 </li>
+			 <%else %>
 			 <li class="no_hover">
 				<a type="submit" class="cbi-button" value="<%=pcdata(striptags(nnode.title))%>" href="<%=pcdata(href)%>"><%=pcdata(striptags(nnode.title))%> </a>
 			 </li>

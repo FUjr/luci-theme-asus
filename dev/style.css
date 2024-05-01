@@ -1327,7 +1327,23 @@ p#shadowsocksr_status {
     cursor: pointer;
     padding-top:6px;
 }
-
+.main > .main-left > .nav > .wizard_li:hover {
+    background:linear-gradient(to bottom, #B9D8E6 0%, #699BBF  100%);
+}
+.main > .main-left > .nav > .wizard_li {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    justify-items: start;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    align-items: center;
+    margin: 0.8rem;
+    border:1px solid #6B7071;
+    border-radius: 6px;
+    padding-top : 0.5rem;
+    padding-bottom : 0.5rem;
+    background:linear-gradient(to bottom, #838383 0%, #262626 100%) ;
+}
 
 .main > .main-left > .nav > .slide > .slide-menu > li {
     display: grid;
@@ -1338,13 +1354,14 @@ p#shadowsocksr_status {
     align-items: center;
 
 }
-
+.main > .main-left > .nav  > li > .nnode_icon,
 .main > .main-left > .nav > .slide > .slide-menu > li > .nnode_icon {
     height: 43px;
     width: 43px;
     background: url(../images/_APP_Installation.png) center;
     background-size: 100% 100%;
     margin: auto;
+    no-repeat
 }
 
 .main > .main-left > .nav > .slide > .slide-menu > li > .Turbo_ACC_Center {
@@ -1385,7 +1402,9 @@ p#shadowsocksr_status {
     background: url(../images/menu_img11.png) center;
 }
 
-
+.main > .main-left > .nav  > li > .wizard  {
+    background: url(../images/menu_img12.png) center no-repeat;
+}
  
 
 .main > .main-left > .nav > .slide > .slide-menu > li > .nnode_title {
@@ -1416,7 +1435,7 @@ p#shadowsocksr_status {
     -webkit-font-smoothing: antialiased;
 }
 
-.main > .main-left > .nav > .slide > .menu::after {
+/* .main > .main-left > .nav > .slide > .menu::after {
     right: 0.5rem;
     top: 0.8rem;
     font-family: "design" !important;
@@ -1509,7 +1528,7 @@ p#shadowsocksr_status {
 }
 .main > .main-left > .nav > li > a[data-title="Reboot"]:before {
     content: "\e004";
-}
+} */
 
 .main > .main-left > .nav > .slide > ul {
     display: none;

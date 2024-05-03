@@ -212,8 +212,12 @@
 
 <div class="container">
 	<span class="showSide"></span>
-	<a class="brand" href="#"><%=boardinfo.hostname or "OpenWrt"%></a>
-		<div class="pull-right">
+	<% if fs.stat("/www/luci-static/design/images/logo.png") then %>
+		<div class="brand background_brand">	</div>
+	<% else %>
+		<a class="brand" href="#"><%=boardinfo.hostname or "OpenWrt"%></a>
+	<% end %>
+	<div class="pull-right">
 		<script>
 			if ($(window).width() > 992) {
         		$("header>.container>.brand").css("padding", "0 0px")

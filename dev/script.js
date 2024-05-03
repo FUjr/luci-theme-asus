@@ -141,7 +141,8 @@
         mainNodeName = mainNodeName.replace(/[ \t\n\r\/]+/g, "_").toLowerCase();
         $("body").addClass(mainNodeName);
     }
-    
+    $(".cbi-button-up").val("");
+    $(".cbi-button-down").val("");
     /**
      * hook other "A Label" and add hash to it.
      */

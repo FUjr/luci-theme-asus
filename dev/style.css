@@ -1198,6 +1198,14 @@ header > .container > .brand {
     transition: 0.1s ease-in-out;
     position: absolute;
 }
+
+header > .container > .background_brand {
+    background: url(../images/logo.png) no-repeat;
+    background-size: 100% auto;
+    margin-left: 2rem;
+}
+
+
 header > .container > a[class="brand"]:after {
     content:"";
     font-size:14px;
@@ -1435,7 +1443,7 @@ p#shadowsocksr_status {
     -webkit-font-smoothing: antialiased;
 }
 
-/* .main > .main-left > .nav > .slide > .menu::after {
+.main > .main-left > .nav > .slide > .menu::after {
     right: 0.5rem;
     top: 0.8rem;
     font-family: "design" !important;
@@ -1528,8 +1536,7 @@ p#shadowsocksr_status {
 }
 .main > .main-left > .nav > li > a[data-title="Reboot"]:before {
     content: "\e004";
-} */
-
+} 
 .main > .main-left > .nav > .slide > ul {
     display: none;
     list-style:dotted;
@@ -3523,11 +3530,11 @@ form[action="/cgi-bin/luci/admin/network/wireless_join"] input[class="cbi-button
 }
 /* fix luci-app-fileassistant botton style */
 
-.cbi-button-add,.cbi-button,.cbi-button-link,.cbi-button-reset,.cbi-button-remove,.cbi-button-save,.cbi-button-cancel,.cbi-button-close
+.cbi-button-add,.cbi-button,.cbi-button-link,.cbi-button-reset,.cbi-button-remove,.cbi-button-save,.cbi-button-cancel,.cbi-button-close,.cbi-button
 {
     background: transparent url(../images/contentbt_normal.png) no-repeat scroll center top;
 }
-.cbi-button-add:hover,.cbi-button:hover,.cbi-button-link:hover,.cbi-button-reset:hover,.cbi-button-remove:hover,.cbi-button-save:hover,.cbi-button-cancel:hover,.cbi-button-close:hover
+.cbi-button-add:hover,.cbi-button:hover,.cbi-button-link:hover,.cbi-button-reset:hover,.cbi-button-remove:hover,.cbi-button-save:hover,.cbi-button-cancel:hover,.cbi-button-close:hover,.cbi-button:hover
 {
     background: transparent url(../images/contentbt_over.png) no-repeat scroll center top;
 }

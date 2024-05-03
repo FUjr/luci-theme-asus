@@ -5,9 +5,9 @@
 
 include $(TOPDIR)/rules.mk
 
-LUCI_TITLE:=Design Theme
+LUCI_TITLE:=ASUS Theme
 LUCI_DEPENDS:=
-PKG_VERSION:=5.8.0-20240106
+PKG_VERSION:=1.0.0-20240503
 
 include $(TOPDIR)/feeds/luci/luci.mk
 

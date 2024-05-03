@@ -1198,6 +1198,12 @@ header > .container > .brand {
     transition: 0.1s ease-in-out;
     position: absolute;
 }
+
+header > .container > .background_brand {
+    background: url(../images/logo.png) no-repeat;
+    background-size: 100% auto;
+}
+
 header > .container > a[class="brand"]:after {
     content:"";
     font-size:14px;

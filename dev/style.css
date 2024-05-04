@@ -1200,9 +1200,11 @@ header > .container > .brand {
 }
 
 header > .container > .background_brand {
-    background: url(../images/logo.png) no-repeat;
-    background-size: 100% auto;
-    margin-left: 2rem;
+    margin-left: 4rem;
+    margin-top:10px;
+    float:left;
+    overflow-x: auto;
+    height:40px;
 }
 
 

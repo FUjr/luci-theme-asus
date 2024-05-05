@@ -1797,6 +1797,27 @@ h4 {
 	 margin-top: 5px;
  }
 
+ [data-tab-title] {
+	overflow: hidden;
+	height: 0;
+	opacity: 0;
+	margin: 0;
+	padding: 0rem 1rem !important;
+}
+
+[data-tab-active="true"] {
+    overflow: auto;
+    height: auto;
+    opacity: 1;
+    transition: opacity .25s ease-in;
+    margin: inherit !important;
+    display: block;
+    /* padding: 12px; */
+    border-radius: 8px;
+    /* box-shadow: 3px 3px 3px rgb(0 0 0 / 5%); */
+    /* background-color: var(--bgwhite); */
+}
+
 .cbi-section,
 .cbi-section-error,
 #iptables,

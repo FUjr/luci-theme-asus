@@ -1342,7 +1342,7 @@ header > .fill > .container > #logo > img {
 }
 
 .fill > .container > .brand-hostname {
-    .font-size: 14px;
+    font-size: 14px;
     line-height:60px;
     color: #555555;
     cursor: default;
@@ -1492,10 +1492,10 @@ p#shadowsocksr_status {
 .main > .main-left > .nav > .slide > .slide-menu > li > .nnode_icon {
     height: 43px;
     width: 43px;
-    background: url(../images/_APP_Installation.png) center;
+    background: url(../images/_APP_Installation.png) center no-repeat;
     background-size: 100% 100%;
     margin: auto;
-    no-repeat
+    
 }
 
 .main > .main-left > .nav > .slide > .slide-menu > li > .Turbo_ACC_Center {
@@ -3908,7 +3908,7 @@ form[action="/cgi-bin/luci/admin/network/wireless_join"] input[class="cbi-button
     border-radius: var(--commonRadius0);
     margin: 3px 3px 3px 0;
     height: unset !important;
-    
+}
 /* update node-system-commands style */
 .node-system-commands h3 {
     text-transform: unset;
@@ -3972,7 +3972,41 @@ form[action="/cgi-bin/luci/admin/network/wireless_join"] input[class="cbi-button
 .node-nas-fileassistant .fb-container .cbi-value-perm {
     display: table-cell;
 }
-/* fix luci-app-adguardhome style */
-.node-services-adguardhome input[onclick*="window.open('http://'+window.location.hostname+':"] {
-    line-height: 0;
+
+
+.cbi-progressbar {
+    position: relative !important;
+    min-width: 11rem !important;
+    height: 1.5rem !important;
+    margin: 0 0 !important;
+    /* border-color: var(--progressbarColor) !important; */
+    background-color:var(--progressbarColor) !important;
+    border-radius: 5px !important;
+    overflow: hidden !important;
+}
+
+.cbi-progressbar>div {
+    width: 0;
+    height: 100% !important;
+    transition: width .25s ease-in !important;
+    color: var(--progressbartxtColor) !important;
+    background: var(--progressbar) !important;
+}
+
+.cbi-progressbar::after {
+    /* font-weight: bold; */
+    /* font-family: monospace; */
+    font-size: 0.75rem !important;
+    font-size-adjust: .38 !important;
+    line-height: 1.5rem !important;
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    overflow: hidden !important;
+    content: attr(title) !important;
+    text-align: center !important;
+    white-space: pre !important;
+    text-overflow: ellipsis !important;
 }

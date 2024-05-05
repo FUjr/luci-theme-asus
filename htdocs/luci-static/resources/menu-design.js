@@ -81,22 +81,38 @@ return baseclass.extend({
 				submenu = this.renderMainMenu(children[i], url + '/' + children[i].name, l),
 				hasChildren = submenu.children.length,
 				slideClass = hasChildren ? 'slide' : null,
-				menuClass = hasChildren ? 'menu' : null;
+				menuClass = hasChildren ? 'menu' : 'cbi-button',
+				hasGrandChildren = hasChildren ? ui.menu.getChildren(children[i]).length : false;
 			if (isActive) {
 				ul.classList.add('active');
 				slideClass += " active";
 				menuClass += " active";
 			}
-
-			ul.appendChild(E('li', { 'class': slideClass }, [
-				E('a', {
-					'href': L.url(url, children[i].name),
-					'click': (l == 1) ? ui.createHandlerFn(this, 'handleMenuExpand') : null,
-					'class': menuClass,
-					'data-title': hasChildren ? children[i].title.replace(" ", "_") : children[i].title.replace(" ", "_"),
-				}, [_(children[i].title)]),
-				submenu
-			]));
+			var icon_class_name = hasChildren ? children[i].title.replace(" ", "_") : children[i].title.replace(" ", "_")
+			var icon_div =  hasChildren ? E([]) : E('div', { 'class': 'nnode_icon '+icon_class_name });
+			if (l > 1) {
+				ul.appendChild(E('li', { 'class': slideClass }, [
+					icon_div,
+					E('a', {
+						'href': L.url(url, children[i].name),
+						'click': (l == 1) ? ui.createHandlerFn(this, 'handleMenuExpand') : null,
+						'class': menuClass,
+						'data-title': hasChildren ? children[i].title.replace(" ", "_") : children[i].title.replace(" ", "_"),
+					}, [_(children[i].title)]),
+					submenu
+				]));
+			}
+			else {
+				ul.appendChild(E('li', { 'class': slideClass }, [
+					E('a', {
+						'href': L.url(url, children[i].name),
+						'click': (l == 1) ? ui.createHandlerFn(this, 'handleMenuExpand') : null,
+						'class': menuClass,
+						'data-title': hasChildren ? children[i].title.replace(" ", "_") : children[i].title.replace(" ", "_"),
+					}, [_(children[i].title)]),
+					submenu
+				]));
+			}
 		}
 
 		if (l == 1) {
@@ -115,7 +131,7 @@ return baseclass.extend({
 
 		for (var i = 0; i < children.length; i++) {
 			var isActive = (L.env.requestpath.length ? children[i].name == L.env.requestpath[0] : i == 0);
-
+			
 			ul.appendChild(E('li', {}, [
 				E('a', {
 					'href': L.url(children[i].name),
@@ -197,4 +213,3 @@ return baseclass.extend({
 		}
 	},
 });
-

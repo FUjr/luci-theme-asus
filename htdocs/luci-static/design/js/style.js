@@ -13,7 +13,7 @@
 		document.getElementById("indicators").addEventListener('DOMSubtreeModified', function () {
 			var child = document.getElementById("indicators");
 			if (child.firstElementChild.getAttribute("data-indicator") != "uci-changes") {
-				child.firstElementChild.textContent = eval("'\ue6b9'")
+				child.firstElementChild.textContent = ' ';
 			}
 		}, false);
 

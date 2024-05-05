@@ -24,6 +24,7 @@
 	local http = require "luci.http"
 	local disp = require "luci.dispatcher"
 	local ver  = require "luci.version"
+	local fs = require "nixio.fs"
 
 	local boardinfo = util.ubus("system", "board") or { }
 
@@ -78,18 +79,18 @@
 	<div class="fill">
 		<div class="container">
 			<span class="showSide"></span>
-			<a class="brand" href="#"><%=striptags(boardinfo.hostname or "OpenWrt")%></a>
+			<% if fs.stat("/www/luci-static/design/images/logo.png") then %>
+				<img src="/luci-static/design/images/logo.png" class="background_brand" />
+			<% else %>
+				<a class="brand" href="#"><%=striptags(boardinfo.hostname or "OpenWrt")%></a>
+			<% end %>
 			<div class="status" id="indicators"></div>
 		</div>
 	</div>
 </header>
 
 <div class="navbar">
-  <a href="/cgi-bin/luci/admin/status/overview"><img src="<%=media%>/images/home.png" /></a>
-  <a href="/cgi-bin/luci/admin/services/openclash"><img src="<%=media%>/images/openclash.png" /></a>
-  <a href="/cgi-bin/luci/admin/network/network"><img src="<%=media%>/images/link.png" /></a>
-  <a href="/cgi-bin/luci/admin/status/realtime"><img src="<%=media%>/images/rank.png" /></a>
-  <a href="/cgi-bin/luci/admin/system/admin"><img src="<%=media%>/images/user.png" /></a>
+
 </div>
 
 <div class="main">

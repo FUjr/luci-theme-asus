@@ -124,6 +124,101 @@ body div {
     line-height:150%;
 }
 
+.table {
+	position: relative;
+	display: table;
+}
+
+.thead {
+	display: table-header-group;
+}
+
+.tbody {
+	display: table-row-group;
+}
+
+.tfoot {
+	display: table-footer-group;
+}
+
+.td,
+.th {
+	line-height: normal;
+	display: table-cell;
+	padding: .5em;
+	text-align: center;
+	vertical-align: middle;
+    white-space: nowrap;
+}
+
+.th {
+	font-weight: bold;
+    white-space: nowrap;
+}
+
+.tr.placeholder {
+	height: 4em;
+}
+
+.tr.placeholder > .td {
+	line-height: 3;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	text-align: center !important;
+	background: inherit;
+}
+
+.td[width="33%"], 
+.td[width="33%"]~.td {
+	padding: 12px;
+}
+
+.table[width="33%"],
+.th[width="33%"],
+.td[width="33%"] {
+	width: 33%;
+}
+
+.table[width="100%"],
+.th[width="100%"],
+.td[width="100%"] {
+	width: 100%;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-family: -apple-system, 'Microsoft Yahei';
+    font-weight: 600;
+    line-height: 1.1;
+    color: inherit;
+    clear:both;
+    text-transform: capitalize;
+}
+
+html {
+	overflow-y: hidden;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    font-family: -apple-system, 'Microsoft Yahei' !important;
+    font-size: 0.92rem;
+    line-height: 150%;
+    background-color: var(--bg);
+    color:var(--textColor);
+}
+
 a {
     color: var(--textColor);
     text-decoration: none;
@@ -1186,9 +1281,24 @@ h3 {
 }
 
 
-header > .container {
-margin:0;
-padding:0;
+header > .fill > .container {
+	/* margin-top: .5rem; */
+	/* padding: .5rem 1rem 0 1rem; */
+	margin:0;
+	padding:0;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+header > .fill > .container > #logo {
+	margin: 0 3.5rem 0 1.5rem;
+}
+
+header > .fill > .container > #logo > img {
+	width: calc(0% + 10rem);
+	margin-top: -.5rem;
 }
 
 .fill > .container > .brand {
@@ -1650,28 +1760,245 @@ li {
     margin:30px 30px 50px 30px;
 }
 
+
+li {
+	list-style-type: none;
+}
+
+
 h1 {
-    color: var(--textColor);
+    color: var(--activeColor);
     font-size: 20px;
     padding-bottom: 10px;
     border-bottom: 1px solid #eee;
 }
 
 h2 {
-    color: var(--textColor);
+    color: var(--activeColor);
     padding: 0 12px 6px 12px;
     text-transform: capitalize;
 }
 
 h3 {
     font-size: 1.2rem;
-    color: var(--textColor);
+    color: var(--activeColor);
     font-weight:bold;
     padding: 0 12px 10px 12px;
 }
 
 h4 {
 
+}
+
+ div.cbi-section{
+	 border: var(--sectionBorder);
+	 margin-bottom: 20px;
+	 border-radius: 8px;
+	 margin-top: 5px;
+ }
+
+.cbi-section,
+.cbi-section-error,
+#iptables,
+.Firewall form,
+#cbi-network > .cbi-section-node,
+#cbi-wireless > .cbi-section-node,
+#cbi-wireless > #wifi_assoclist_table,
+[data-tab-title],
+/* [data-page^="admin-system-admin"]:not(.node-main-login) .cbi-map:not(#cbi-dropbear), */
+[data-page="admin-system-opkg"] #maincontent > .container {
+   /* margin: 10px 0 0 0; */
+   padding: 10px;
+   border: 1px;
+   font-weight: normal;
+   font-style: normal;
+   line-height: 1;
+   font-family: inherit;
+   text-align: left;
+   min-width: inherit;
+   overflow-x: auto;
+   overflow-y: hidden;
+   background-color: var(--sectionbgColor);
+   border-radius: 8px;
+   /* box-shadow: var(--sectionShaddow); */
+   -webkit-overflow-scrolling: touch;
+}
+
+#maincontent > .container > div:nth-child(1).alert-message.warning > a {
+    font: inherit;
+    overflow: visible;
+    text-transform: none;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    min-width: 6rem;
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+    margin-top: 2rem;
+    text-decoration: inherit;
+}
+
+.cbi-modal .cbi-section,
+.cbi-section .cbi-section {
+	padding: 0;
+	box-shadow: none;
+}
+
+.cbi-modal .cbi-tabmenu {
+	margin-left: 0;
+}
+
+/* desc */
+.cbi-section-descr {
+    padding: 3px 10px;
+}
+
+.cbi-map-descr {
+    padding: 5px 5px 5px 12px;
+}
+
+.cbi-map-descr h3 {
+    font-size: 0.92rem;
+    font-weight: normal;
+    color: #666;
+}
+
+#cbi-vsftpd .cbi-map-descr {
+    color: var(--activeColor);
+    padding: 0 12px 0px 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.cbi-map-descr + fieldset {
+	margin-top: 1rem;
+}
+
+.cbi-section > legend {
+	display: none !important;
+}
+
+fieldset > fieldset,
+.cbi-section > .cbi-section {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-shadow: none;
+}
+
+.cbi-section > h3:first-child,
+.panel-title {
+    width: 100%;
+    display: block;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.cbi-section > h4:first-child,
+.cbi-section > p:first-child,
+[data-tab-title] > h3:first-child,
+[data-tab-title] > h4:first-child,
+[data-tab-title] > p:first-child {
+	padding-top: 1rem;
+}
+
+table,
+.table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+    border: 0px solid #eee;
+}
+
+table > tbody > tr > td,
+table > tbody > tr > th,
+table > tfoot > tr > td,
+table > tfoot > tr > th,
+table > thead > tr > td,
+table > thead > tr > th,
+.table > .tbody > .tr > .td,
+.table > .tbody > .tr > .th,
+.table > .tfoot > .tr > .td,
+.table > .tfoot > .tr > .th,
+.table > .thead > .tr > .td,
+.table > .thead > .tr > .th,
+.table > .tr > .td.cbi-value-field,
+.table > .tr > .th.cbi-section-table-cell {
+    padding: 12px;
+    white-space: nowrap;
+    line-height:1.5;
+    vertical-align: middle !important;
+}
+
+.container > .cbi-section:first-of-type > .table[width="100%"] > .tr > .td {
+	padding: .6rem;
+}
+
+
+.cbi-section-table-cell {
+	line-height: 1.1;
+	align-self: flex-end;
+	flex: 1 1 auto;
+}
+
+table > tr {
+    border-bottom: var(--cbilineColor) !important;
+}
+
+table > tr:last-child {
+    border-bottom: none !important;
+}
+
+#cbi-wireless .td,
+#cbi-network .tr:first-child > .td,
+.table[width="100%"] > .tr:first-child > .td,
+[data-page="admin-network-diagnostics"] .tr > .td,
+.tr.table-titles > .th,
+.tr.cbi-section-table-titles > .th {
+	border-top: 0 !important;
+}
+
+.table[width="100%"] > .tr:first-child > .td {
+	margin: auto 0;
+}
+
+.cbi-section-table-row {
+    text-align: center;
+}
+
+.cbi-section-table-row:last-child {
+	margin-bottom: 0;
+}
+
+.cbi-section-table-row > .cbi-value-field .cbi-dropdown,
+.cbi-section-table-row > .cbi-value-field .cbi-input-select,
+.cbi-section-table-row > .cbi-value-field .cbi-input-text,
+.cbi-section-table-row > .cbi-value-field .cbi-input-password {
+	width: 100%;
+}
+
+.cbi-section-table-row > .cbi-value-field [data-dynlist] > input,
+.cbi-section-table-row > .cbi-value-field input.cbi-input-password {
+	width: calc(100% - 1.5rem);
+}
+
+.cbi-section-table-row .td {
+	text-align: center !important;
 }
 
 label {

@@ -61,6 +61,8 @@
     --liSelectedColor: #2f2f2f;
     --vssrStatusColor: rgb(204, 204, 204);
     --vssrBoxShadow: 0 0 1rem 0 rgb(0 0 0 / 30%);
+    --commonRadius0: 8px;
+    --commonRadius1: 8px;
 }
 
 @font-face {

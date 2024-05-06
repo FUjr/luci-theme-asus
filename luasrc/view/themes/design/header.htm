@@ -287,7 +287,7 @@
 				 <a class="menu" data-title="<%=pcdata(striptags(nnode.title))%>" href="#"><%=pcdata(striptags(translate(nnode.title)))%></a>
 				 <%- submenu("" .. category .. "/" .. r .. "/", nnode) %>
 			 </li>
-			 <%          elseif pcdata(striptags(nnode.title)) == "初始化设置" then%>
+			 <%          elseif pcdata(striptags(nnode.title)) == "初始化设置" or pcdata(striptags(nnode.title)) ==  "Setup Wizard" then%>
 			 <li class="wizard_li">
 				<div class="nnode_icon wizard">
 					

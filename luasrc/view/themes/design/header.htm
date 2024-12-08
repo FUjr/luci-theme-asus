@@ -10,6 +10,9 @@
 	luci-theme-design
 	Copyright 2023 2smile <gngppz@gmail.com>
 
+	luci-theme-asus
+    Copyright 2024 fujr <fjrcn@outlook.com>
+
 	Have a bug? Please create an issue here on GitHub!
 	https://github.com/gngpp/luci-theme-design
 
@@ -162,7 +165,7 @@
         </style>
     <% end -%>
 	<script src="<%=media%>/js/jquery.min.js?v=<%= ver.luciversion %>"></script>
-	<script src="<%=media%>/js/design.js?v=<%= ver.luciversion %>"></script>
+	<script src="<%=media%>/js/asus.js?v=<%= ver.luciversion %>"></script>
 </head>
 
 <body class="lang_<%=luci.i18n.context.lang%> <%- if node then %><%= striptags( node.title ) %><%- end %> <% if luci.dispatcher.context.authsession then %>logged-in<% end %>"
@@ -203,8 +206,8 @@
 
 <div class="container">
 	<span class="showSide"></span>
-	<% if fs.stat("/www/luci-static/design/images/logo.png") then %>
-		<img class="background_brand" src="/luci-static/design/images/logo.png">
+	<% if fs.stat("/www/luci-static/asus/images/logo.png") then %>
+		<img class="background_brand" src="/luci-static/asus/images/logo.png">
 	<% else %>
 		<a class="brand" href="#"><%=boardinfo.hostname or "OpenWrt"%></a>
 	<% end %>

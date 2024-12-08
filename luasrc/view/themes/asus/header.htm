@@ -79,8 +79,8 @@
 	<div class="fill">
 		<div class="container">
 			<span class="showSide"></span>
-			<% if fs.stat("/www/luci-static/design/images/logo.png") then %>
-				<img src="/luci-static/design/images/logo.png" class="background_brand" />
+			<% if fs.stat("/www/luci-static/asus/images/logo.png") then %>
+				<img src="/luci-static/asus/images/logo.png" class="background_brand" />
 			<% else %>
 				<a class="brand" href="#"><%=striptags(boardinfo.hostname or "OpenWrt")%></a>
 			<% end %>

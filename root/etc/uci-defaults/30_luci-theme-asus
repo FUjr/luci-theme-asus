@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ "$PKG_UPGRADE" != 1 ]; then
+	uci get luci.themes.asus >/dev/null 2>&1 || \
+	uci batch <<-EOF
+		set luci.themes.asus=/luci-static/asus
+		set luci.main.mediaurlbase=/luci-static/asus
+		commit luci
+	EOF
+fi
+
+exit 0

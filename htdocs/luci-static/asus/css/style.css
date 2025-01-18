@@ -365,6 +365,15 @@ svg {
     margin: 10px;
 }
 
+.cbi-section-error {
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    color: #a94442;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 6px;
+}
+
 /* fix node-services-vssr */
 .node-services-vssr .status-bar {
     bottom:calc(var(--vssrBottom) + constant(safe-area-inset-bottom));
@@ -1101,10 +1110,8 @@ img[src*="/luci-static/resources/icons/signal-none.png"]
 .navbar a {
     float: left;
     text-align: center;
-    padding: 8px 0;
-    width: 20%;
-    text-decoration: none;
-    max-width: 100px;
+    margin-left: 2rem;
+    opacity: 1;
 }
 
 .cbi-map {
@@ -1177,6 +1184,12 @@ img[src*="/luci-static/resources/icons/signal-none.png"]
 header > .container {
 margin:0;
 padding:0;
+}
+
+header > .container > .systeminfo {
+    float: right;
+    padding-top: 0.5rem;
+    padding-right: 5rem;
 }
 
 header > .container > .brand {
@@ -1496,7 +1509,8 @@ p#shadowsocksr_status {
     content: "\56";
 }
 
-.main > .main-left > .nav > .slide > a[data-title="Network"]:before {
+.main > .main-left > .nav > .slide > a[data-title="Network"]:before,
+.main > .main-left > .nav > .slide > a[data-title="Advanced_Network"]:before {
     content: "\72";
 }
 
@@ -2118,8 +2132,14 @@ form.inline + form.inline,
     display: table-cell;
 }
 
+
+.tabs > li >a:hover
+{
+    background: transparent url(../images/contentbt_over.png) no-repeat scroll center top;
+}
+
 .cbi-tabmenu > li {
-    border-radius: var(--tabmenuRadius);
+    border-radius: var(--tabmenuRadius);   
 }
 
 .tabs > li > a {
@@ -2128,10 +2148,13 @@ form.inline + form.inline,
     float: left;
     display: block;
     white-space: nowrap;
+    margin: 0 1rem 0 0;
     height: 2.5rem;
     line-height: 2.5rem;
     font-size: 0.92rem;
-}
+    background: transparent url(../images/contentbt_normal.png) no-repeat scroll center top;
+    border-radius: var(6px);
+}   
 
 .cbi-tabmenu > li > a {
     text-decoration: none;

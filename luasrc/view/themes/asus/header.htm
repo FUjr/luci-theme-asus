@@ -123,10 +123,10 @@
 	local mode = 'normal'
 	local navbar = 'display'
 	local navbar_proxy = 'shadowsocksr'
-	if fs.access('/etc/config/design') then
-		mode = uci:get_first('design', 'global', 'mode')
-		navbar = uci:get_first('design', 'global', 'navbar')
-		navbar_proxy = uci:get_first('design', 'global', 'navbar_proxy')
+	if fs.access('/etc/config/asus') then
+		mode = uci:get_first('asus', 'global', 'mode')
+		navbar = uci:get_first('asus', 'global', 'navbar')
+		navbar_proxy = uci:get_first('asus', 'global', 'navbar_proxy')
 	end 
 -%>
 <!DOCTYPE html>
